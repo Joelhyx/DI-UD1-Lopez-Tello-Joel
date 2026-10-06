@@ -11,3 +11,10 @@ class Descripcion{
     'Deja volar tu imaginación: ¡la codicia nunca fue tan gratificante!');
   }
 }
+
+class Descuento {
+  static void aplicarDescuento(double precioOriginal) {
+    double precioFinal = precioOriginal * 0.8;
+    print('Descuento del 20% aplicado. Precio final: ${precioFinal.toStringAsFixed(2)} €');
+  }
+}

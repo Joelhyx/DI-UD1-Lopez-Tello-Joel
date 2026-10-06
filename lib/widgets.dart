@@ -158,20 +158,29 @@ class PrecioJuego extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           'Precio:',
           style: TextStyle(color: Colors.grey, fontSize: 14),
         ),
-        Text(
-          '39,99 €',
-          style: TextStyle(
-            color: Colors.cyanAccent,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          children: [
+            const Text(
+              '39,99 €',
+              style: TextStyle(
+                color: Colors.cyanAccent,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.local_offer, color: Colors.cyanAccent),
+              tooltip: 'Aplicar descuento',
+              onPressed: () => Descuento.aplicarDescuento(39.99),
+            ),
+          ],
         ),
       ],
     );
