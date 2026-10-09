@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'widgets.dart';
 
+//Aqui se empieza a ejecutar la app Flutter
+//runApp() conecta MyApp con la pantalla.
 void main() {
   runApp(const MyApp());
 }
 
+//Clase principal de la app Flutter
+//Configura la apariencia y define la pantalla principal con un Scaffold que contiene la tarjeta de videojuego.
+//El SingleChildScrollView (Recomendado por la ia) permite scrollear verticalmente si el contenido no cabe.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

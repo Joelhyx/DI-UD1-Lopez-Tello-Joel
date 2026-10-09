@@ -4,7 +4,8 @@ import 'functions.dart';
 
 class TarjetaVideojuegoAndroid extends StatelessWidget {
   const TarjetaVideojuegoAndroid({super.key});
-
+//Creación y organizacion de la tarjeta en sí, no crea nada, solo organiza los widgets con un column.
+//Estos están dentro de un Container que tiene un borde cian y esquinas redondeadas.
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,7 +49,7 @@ class TarjetaVideojuegoAndroid extends StatelessWidget {
 
 class PortadaJuego extends StatelessWidget {
   const PortadaJuego({super.key});
-
+//Es la imagen de portada del juego, ClippRRect redondea las esquinas superiores para que cuadre con la tarjeta.
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -65,7 +66,7 @@ class PortadaJuego extends StatelessWidget {
 
 class EtiquetaGenero extends StatelessWidget {
   const EtiquetaGenero({super.key});
-
+//Es un Container con fondo, borde y esquinas redondeadas que devuelve el texto del genero.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -89,7 +90,9 @@ class EtiquetaGenero extends StatelessWidget {
 
 class TituloYDescripcion extends StatelessWidget {
   const TituloYDescripcion({super.key});
-
+//es un Colum que organiza el titulo y la descripcion del juego
+//El gestureDetector permite que al pulsar la descripcion, se muestre por consola la descripcion larga.
+//Con la funcion mostrarDescripcion() de la clase Descripcion en functions.dart
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -105,13 +108,13 @@ class TituloYDescripcion extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         GestureDetector(
-            onTap: Descripcion.mostrarDescripcion,
-            child: const Text(
-              '¡El maestro del sigilo ha vuelto!',
-              style: TextStyle(
-                fontSize: 13,
-                fontStyle: FontStyle.italic,
-                color: Colors.grey,
+          onTap: Descripcion.mostrarDescripcion,
+          child: const Text(
+            '¡El maestro del sigilo ha vuelto!',
+            style: TextStyle(
+              fontSize: 13,
+              fontStyle: FontStyle.italic,
+              color: Colors.grey,
             ),
           ),
         ),
@@ -122,7 +125,7 @@ class TituloYDescripcion extends StatelessWidget {
 
 class ValoracionJuego extends StatelessWidget {
   const ValoracionJuego({super.key});
-
+//Es un Container que contiene un Row con el texto de la valoracion y las estrellas.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -155,7 +158,10 @@ class ValoracionJuego extends StatelessWidget {
 
 class PrecioJuego extends StatelessWidget {
   const PrecioJuego({super.key});
-
+//Es un Row que contiene el texto del precio y un icono de descuento.
+//Al pulsar el icono se ejecuta la funcion aplicarDescuento() de la clase Descuento en functions.dart
+//Gracias al IconButton, que permite ejecutar una funcion al pulsar el icono.
+//Se usa () => Descuento.aplicarDescuento(39.99) para pasar el precio original como argumento.
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -189,7 +195,7 @@ class PrecioJuego extends StatelessWidget {
 
 class PlataformasDisponibles extends StatelessWidget {
   const PlataformasDisponibles({super.key});
-
+//Muestra las plataformas disponibles para el juego en un Row con iconos de cada plataforma y un texto.
   @override
   Widget build(BuildContext context) {
     return Container(
